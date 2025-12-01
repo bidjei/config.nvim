@@ -1,11 +1,4 @@
 
-                   -- Before --
-
-require "options"
-require "lsp"
-
-                   -- 3rd Party --
-
 vim.api.nvim_create_autocmd("PackChanged", { callback = function(ev)
   local name, kind = ev.data.spec.name, ev.data.kind
 
@@ -15,6 +8,9 @@ vim.api.nvim_create_autocmd("PackChanged", { callback = function(ev)
 end})
 
 vim.pack.add {
+	"https://github.com/nvim-neotest/nvim-nio.git",
+	"https://github.com/mfussenegger/nvim-dap.git",
+	"https://github.com/rcarriga/nvim-dap-ui.git",
 	"https://github.com/nvim-lua/plenary.nvim",
 	"https://github.com/stevearc/oil.nvim",
 	"https://github.com/shaunsingh/nord.nvim",
@@ -26,11 +22,19 @@ vim.pack.add {
 	"https://github.com/nvim-mini/mini.icons",
 }
 
-vim.cmd.colorscheme "nord"
+                   -- Before --
+
+require "config.options"
+require "config.lsp"
+require "config.dap"
+
+                   -- 3rd Party --
+
+--vim.cmd.colorscheme "nord"
 require "pack.oil"
 require "pack.telescope"
 require "pack.which-key"
 
                    -- After --
 
-require "highlights"
+require "config.highlights"

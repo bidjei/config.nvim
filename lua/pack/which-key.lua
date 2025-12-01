@@ -1,3 +1,4 @@
+local dapui = require "dapui"
 local ts = require "telescope.builtin"
 local key = require("which-key")
 local del = vim.keymap.del
@@ -22,17 +23,17 @@ key.setup {
 			{ "<C-S-j>",    "<C-w>J",                      desc = "Move window Below" },
 			{ "<C-S-k>",    "<C-w>K",                      desc = "Move window Above" },
 
-			{ "g",                                        group = "Goto" },
-			{ "gb",         ts.buffers,                    desc = "Goto Buffer" },
-			{ "gd",         ts.lsp_definitions,            desc = "Goto Definition" },
-			{ "gi",         ts.lsp_implementations,        desc = "Goto Implementaons" },
-			{ "gj",         ts.jumplist,                   desc = "Goto Jump Entry" },
-			{ "gm",         ts.marks,                      desc = "Goto Mark" },
-			{ "gr",         ts.lsp_references,             desc = "Code References" },
-			{ "gs",         ts.lsp_document_symbols,       desc = "Goto Document Symbols" },
-			{ "gS",         ts.lsp_workspace_symbols,      desc = "Goto Workspace Symbols" },
-			{ "gt",         ts.lsp_type_definitions,       desc = "Code Types" },
-			{ "gv",         ts.tags,                       desc = "Goto Vim Tags" },
+			{ "<space>g",                                 group = "Goto" },
+			{ "<space>gb",  ts.buffers,                    desc = "Goto Buffer" },
+			{ "<space>gd",  ts.lsp_definitions,            desc = "Goto Definition" },
+			{ "<space>gi",  ts.lsp_implementations,        desc = "Goto Implementaons" },
+			{ "<space>gj",  ts.jumplist,                   desc = "Goto Jump Entry" },
+			{ "<space>gm",  ts.marks,                      desc = "Goto Mark" },
+			{ "<space>gr",  ts.lsp_references,             desc = "Code References" },
+			{ "<space>gs",  ts.lsp_document_symbols,       desc = "Goto Document Symbols" },
+			{ "<space>gS",  ts.lsp_workspace_symbols,      desc = "Goto Workspace Symbols" },
+			{ "<space>gt",  ts.lsp_type_definitions,       desc = "Code Types" },
+			{ "<space>gv",  ts.tags,                       desc = "Goto Vim Tags" },
 
 			{ "<leader>s",                                group = "Search" },
 			{ "<leader>sb", ts.current_buffer_fuzzy_find,  desc = "Search Buffer" },
@@ -53,10 +54,15 @@ key.setup {
 			{ "<leader>c",                                group = "Code" },
 			{ "<leader>ca", vim.lsp.buf.code_action,       desc = "Code Actions" },
 			{ "<leader>cc", "gcc", remap = true,           desc = "Code Comment Toggle" },
-			{ "<leader>cm", ":make ",                      desc = "Compile Make" },
+			{ "<leader>cm", "<cmd>make<cr>",               desc = "Compile Make" },
 			{ "<leader>ci", ts.lsp_incoming_calls,         desc = "Incoming Code Calls" },
 			{ "<leader>co", ts.lsp_outgoing_calls,         desc = "Outgoing Code Calls" },
 			{ "<leader>cr", vim.lsp.buf.rename,            desc = "Code Rename" },
+
+			{ "<leader>d",                                  group = "Open" },
+			{ "<leader>db", "<cmd>DapToggleBreakpoint<cr>",  desc = "Debugger Breakpoint" },
+			{ "<leader>dl", "<cmd>DapNew<cr>",               desc = "Debugger Launch" },
+			{ "<leader>dv", dapui.toggle,                    desc = "Debugger View" },
 
 			{ "<leader>o",                                group = "Open" },
 			{ "<leader>od", ts.diagnostics,                desc = "Open Diagnostics" },

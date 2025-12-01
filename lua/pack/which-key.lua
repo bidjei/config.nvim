@@ -67,7 +67,7 @@ key.setup {
 			{ "<leader>o",                                group = "Open" },
 			{ "<leader>od", ts.diagnostics,                desc = "Open Diagnostics" },
 			{ "<leader>of", ts.find_files,                 desc = "Open File" },
-			{ "<leader>oF", "<cmd>split | Oil<cr>",        desc = "Open Files" },
+			{ "<leader>oF", "<cmd>Oil --float<cr>",        desc = "Open Files" },
 			{ "<leader>oh", ts.help_tags,                  desc = "Open Help" },
 			{ "<leader>or", ts.oldfiles,                   desc = "Open Recent File" },
 			{ "<leader>ot", "<cmd>split | terminal<cr>A",  desc = "Open Terminal" },

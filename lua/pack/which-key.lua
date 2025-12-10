@@ -37,7 +37,7 @@ key.setup {
 			{ "<C-n>", "<C-w>J", desc = "Move window Below" },
 			{ "<C-l>", "<C-w>K", desc = "Move window Above" },
 
-			{ "<space>g",  group = "Goto" },
+			{ "<space>g", group = "Goto" },
 			{ "<space>gb", ts.buffers, desc = "Goto Buffer" },
 			{ "<space>gd", ts.lsp_definitions, desc = "Goto Definition" },
 			{ "<space>gi", ts.lsp_implementations, desc = "Goto Implementaons" },
@@ -73,7 +73,7 @@ key.setup {
 			{ "<leader>co", ts.lsp_outgoing_calls, desc = "Outgoing Code Calls" },
 			{ "<leader>cr", vim.lsp.buf.rename, desc = "Code Rename" },
 
-			{ "<leader>d",  group = "Open" },
+			{ "<leader>d", group = "Open" },
 			{ "<leader>db", "<cmd>DapToggleBreakpoint<cr>", desc = "Debugger Breakpoint" },
 			{ "<leader>dl", "<cmd>DapNew<cr>", desc = "Debugger Launch" },
 			{ "<leader>dv", dapui.toggle, desc = "Debugger View" },
@@ -94,7 +94,6 @@ key.setup {
 		},
 	},
 }
-
 
 vim.api.nvim_create_autocmd("TextYankPost", {
 	desc = "Highlight when yanking text",

@@ -46,6 +46,7 @@ dap.configurations.c = {
 	},
 }
 dap.configurations.asm = dap.configurations.c
+dap.configurations.cpp = dap.configurations.c
 
 local dap_ui = require "dapui"
 dap_ui.setup {}
